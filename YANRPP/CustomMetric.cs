@@ -16,7 +16,8 @@
         /// <param name="counter">The underlying performance counter.</param>
         /// <param name="metricName">The metric name.</param>
         /// <param name="unit">The metric unit.</param>
-        public CustomMetric(PerformanceCounter counter, string metricName, string unit)
+        /// <param name="conversionRatio">The conversion ratio.</param>
+        public CustomMetric(PerformanceCounter counter, string metricName, string unit, short? conversionRatio = null)
         {
             if (counter == null)
             {
@@ -33,6 +34,7 @@
             _counter = counter;
             this.Unit = unit;
             this.MetricName = metricName;
+            this.ConversionRatio = conversionRatio;
         }
 
         /// <summary>
@@ -44,6 +46,11 @@
         /// Gets the New Relic metric unit.
         /// </summary>
         public string Unit { get; private set; }
+
+        /// <summary>
+        /// Gets the conversion ration.
+        /// </summary>
+        public short? ConversionRatio { get; private set; }
 
         /// <summary>
         /// Gets the New Relic metric next value.

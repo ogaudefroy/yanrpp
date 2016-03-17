@@ -32,9 +32,21 @@
         /// </summary>
         public override void PollCycle()
         {
-            foreach(var counter in _metrics)
+            foreach (var counter in _metrics)
             {
-                ReportMetric(counter.MetricName, counter.Unit, counter.NextValue);
+                try
+                {
+                    var value = counter.NextValue;
+                    if (counter.ConversionRatio.HasValue)
+                    {
+                        value = (float)(value / Math.Pow(1024, counter.ConversionRatio.Value));
+                    }
+                    ReportMetric(counter.MetricName, counter.Unit, value);
+                }
+                catch (Exception e)
+                {
+                    Console.Error.WriteLine("An error occured while processing counter: {0} - ", counter.MetricName, e.Message);
+                }
             }
         }
 

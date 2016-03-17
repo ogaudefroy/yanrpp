@@ -22,14 +22,27 @@
                 {
                     var category = counter.Attributes["Category"].Value;
                     var counterName = counter.Attributes["Name"].Value;
-                    var metricName = counter.ParentNode.Attributes["Name"].Value + "/" +
-                                     counter.Attributes["MetricName"].Value;
+                    var metricName = counter.ParentNode.Attributes["Name"].Value + "/" + counter.Attributes["MetricName"].Value;
                     var unit = counter.Attributes["Unit"].Value;
+                    var instanceElement = counter.Attributes["Instance"];
 
-                    _logger.Info("Building CustomMetric Category: {0}, Counter: {1}, Metric: {2}, Unit: {3}", category, counterName, metricName, unit);
+                    short? ratio = null;
+                    var ratioElement = counter.Attributes["ConversionRatio"];
+                    if (ratioElement != null)
+                    {
+                        ratio = Convert.ToInt16(ratioElement.Value);
+                    }
+                    string instance = null;
+                    if (instanceElement != null)
+                    {
+                        instance = instanceElement.Value;
+                    }
 
-                    var perfCounter = new PerformanceCounter(category, counterName);
-                    result.Add(new CustomMetric(perfCounter, metricName, unit));
+                    var perfCounter = instance == null
+                        ? new PerformanceCounter(category, counterName)
+                        : new PerformanceCounter(category, counterName, instance);
+
+                    result.Add(new CustomMetric(perfCounter, metricName, unit, ratio));
                 }
                 catch (Exception e)
                 {
