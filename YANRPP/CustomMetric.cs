@@ -1,5 +1,6 @@
 ﻿namespace YANRPP
 {
+    using System;
     using System.Diagnostics;
 
     /// <summary>
@@ -17,6 +18,18 @@
         /// <param name="unit">The metric unit.</param>
         public CustomMetric(PerformanceCounter counter, string metricName, string unit)
         {
+            if (counter == null)
+            {
+                throw new ArgumentNullException(nameof(counter));
+            }
+            if (string.IsNullOrEmpty(metricName))
+            {
+                throw new ArgumentNullException(nameof(metricName));
+            }
+            if (string.IsNullOrEmpty(unit))
+            {
+                throw new ArgumentNullException(nameof(unit));
+            }
             _counter = counter;
             this.Unit = unit;
             this.MetricName = metricName;
