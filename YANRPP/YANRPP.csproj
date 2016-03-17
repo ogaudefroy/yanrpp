@@ -7,8 +7,8 @@
     <ProjectGuid>{6D02A13D-86D1-4EEA-AB51-02A1ACD78539}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NRSsas</RootNamespace>
-    <AssemblyName>NRSsas</AssemblyName>
+    <RootNamespace>YANRPP</RootNamespace>
+    <AssemblyName>plugin</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
