@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using NewRelic.Platform.Sdk;
+    using NewRelic.Platform.Sdk.Utils;
 
     /// <summary>
     /// Core agent ; collects perfmon metrics and transfers them to New Relic.
