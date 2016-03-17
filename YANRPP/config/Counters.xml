@@ -15,12 +15,14 @@
     <Counter Category="MSAS12:MDX" Name="Total NON EMPTY unoptimized" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
     <Counter Category="MSAS12:MDX" Name="Total NON EMPTY for calculated members" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
   </MetricGroup>
+  <MetricGroup Name="Memory-Configuration">
+	<Counter Category="MSAS12:Memory" Name="Memory Limit Low KB" MetricName="Memory Limit Low" Unit="Kilobytes" />
+    <Counter Category="MSAS12:Memory" Name="Memory Limit High KB" MetricName="Memory Limit High" Unit="Kilobytes" />
+  </MetricGroup>
   <MetricGroup Name="Memory">
     <Counter Category="MSAS12:Memory" Name="Memory Usage KB" MetricName="Memory Usage" Unit="Kilobytes" />" />
     <Counter Category="MSAS12:Memory" Name="Cleaner Memory shrinkable KB" MetricName="Cleaner Memory Shrinkable" Unit="Kilobytes" />
-    <Counter Category="MSAS12:Memory" Name="Cleaner Memory nonshrinkable KB" MetricName="Cleaner Memory Nonshrinkable" Unit="Kilobytes" />
-    <Counter Category="MSAS12:Memory" Name="Memory Limit Low KB" MetricName="Memory Limit Low" Unit="Kilobytes" />
-    <Counter Category="MSAS12:Memory" Name="Memory Limit High KB" MetricName="Memory Limit High" Unit="Kilobytes" />
+    <Counter Category="MSAS12:Memory" Name="Cleaner Memory nonshrinkable KB" MetricName="Cleaner Memory Nonshrinkable" Unit="Kilobytes" />    
   </MetricGroup>
   <MetricGroup Name="Cache Hit Ratios">
     <Counter Category="MSAS12:Storage Engine Query" Name="Calculation cache lookups/sec" MetricName="Calculation cache lookups" Unit="hits per sec" />
