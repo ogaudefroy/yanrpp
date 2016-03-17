@@ -8,8 +8,11 @@
     <Counter Category="MSAS12:Memory" Name="Memory Limit Low KB" MetricName="Memory Limit Low" Unit="Gigabytes" ConversionRatio="2" />
     <Counter Category="MSAS12:Memory" Name="Memory Limit High KB" MetricName="Memory Limit High" Unit="Gigabytes" ConversionRatio="2"/>
   </MetricGroup>
-  <MetricGroup Name="Memory">
-    <Counter Category="MSAS12:Memory" Name="Memory Usage KB" MetricName="Memory Usage" Unit="Kilobytes" />
+  <MetricGroup Name="MemoryUsage">
+	<Counter Category="MSAS12:Memory" Name="Memory Usage KB" MetricName="SSAS Memory Usage" Unit="Gigabytes" ConversionRatio="2" />
+	<Counter Category="Memory" Name="Available Bytes" MetricName="Memory Available" Unit="Gigabytes" ConversionRatio="3" />
+  </MetricGroup>
+  <MetricGroup Name="Memory">    
     <Counter Category="MSAS12:Memory" Name="Cleaner Memory shrinkable KB" MetricName="Cleaner Memory Shrinkable" Unit="Kilobytes" />
     <Counter Category="MSAS12:Memory" Name="Cleaner Memory nonshrinkable KB" MetricName="Cleaner Memory Nonshrinkable" Unit="Kilobytes" />
   </MetricGroup>
