@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\Counters.2012.xml" />
-    <Content Include="config\Counters.xml">
+    <Content Include="config\Counters.2014.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
