@@ -1,45 +1,65 @@
 ﻿<?xml version="1.0"?>
 <Counters>
-	<MetricGroup Name="CPU">
-		<Counter Category="Processor" Name="% Idle Time" Instance="_Total" MetricName="System Idle" Unit="% CPU" />
-		<Counter Category="Process" Name="% Processor Time" Instance="msmdsrv" MetricName="SSAS Process" Unit="% CPU" />
-	</MetricGroup>
-	<MetricGroup Name="MemoryLimitConfiguration">
-		<Counter Category="MSAS12:Memory" Name="Memory Limit Low KB" MetricName="Memory Limit Low" Unit="Gigabytes" ConversionRatio="2" />
-		<Counter Category="MSAS12:Memory" Name="Memory Limit High KB" MetricName="Memory Limit High" Unit="Gigabytes" ConversionRatio="2"/>
-	</MetricGroup>
-	<MetricGroup Name="MemoryUsage">
-	<Counter Category="MSAS12:Memory" Name="Memory Usage KB" MetricName="SSAS Memory Usage" Unit="Gigabytes" ConversionRatio="2" />
-	<Counter Category="Memory" Name="Available Bytes" MetricName="Memory Available" Unit="Gigabytes" ConversionRatio="3" />
-	</MetricGroup>
-	<MetricGroup Name="Memory">    
-		<Counter Category="MSAS12:Memory" Name="Cleaner Memory shrinkable KB" MetricName="Cleaner Memory Shrinkable" Unit="Kilobytes" />
-		<Counter Category="MSAS12:Memory" Name="Cleaner Memory nonshrinkable KB" MetricName="Cleaner Memory Nonshrinkable" Unit="Kilobytes" />
-	</MetricGroup>
-	<MetricGroup Name="Processing">
-		<Counter Category="MSAS12:Processing" Name="Rows read/sec" MetricName="Rows read" Unit="Rows per sec" />
-		<Counter Category="MSAS12:Processing" Name="Rows written/sec" MetricName="Rows written" Unit="Rows per sec" />
-		<Counter Category="MSAS12:Proc Aggregations" Name="Rows created/sec" MetricName="Rows created" Unit="Rows per sec" />
-		<Counter Category="MSAS12:Proc Aggregations" Name="Rows merged/sec" MetricName="Rows merged" Unit="Rows per sec" />
-		<Counter Category="MSAS12:Proc Indexes" Name="Rows/sec" MetricName="Rows indexed" Unit="Rows per sec" />
-	</MetricGroup>
-	<MetricGroup Name="MDX">
-		<Counter Category="MSAS12:MDX" Name="Total cells calculated" MetricName="Total cells calculated" Unit="Cells" />
-		<Counter Category="MSAS12:MDX" Name="Number of calculation covers" MetricName="Number of calculation covers" Unit="Calculation covers" />
-		<Counter Category="MSAS12:MDX" Name="Total Sonar subcubes" MetricName="Total Sonar subcubes" Unit="Sonar subcubes" />
-		<Counter Category="MSAS12:MDX" Name="Total recomputes" MetricName="Total recomputes" Unit="Cells" />
-		<Counter Category="MSAS12:MDX" Name="Total NON EMPTY unoptimized" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
-		<Counter Category="MSAS12:MDX" Name="Total NON EMPTY for calculated members" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
-	</MetricGroup>
-	<MetricGroup Name="Cache Hit Ratios">
-		<Counter Category="MSAS12:Storage Engine Query" Name="Calculation cache lookups/sec" MetricName="Calculation cache lookups" Unit="hits per sec" />
-		<Counter Category="MSAS12:Storage Engine Query" Name="Flat cache lookups/sec" MetricName="" Unit="hits per sec" />
-		<Counter Category="MSAS12:Storage Engine Query" Name="Dimension cache lookups/sec" MetricName="Measure group cache lookups" Unit="hits per sec" />
-		<Counter Category="MSAS12:Storage Engine Query" Name="Measure group cache lookups/sec" MetricName="Measure group cache lookups" Unit="hits per sec" />
-	</MetricGroup>
-	<MetricGroup Name="Cache Activity">
-		<Counter Category="MSAS12:Cache" Name="Inserts/sec" MetricName="Insertions" Unit="Items per sec" />
-		<Counter Category="MSAS12:Cache" Name="Evictions/sec" MetricName="Evictions" Unit="Items per rate" />
-		<Counter Category="MSAS12:Cache" Name="KB added/sec" MetricName="Kilobytes added" Unit="KiloBytes per sec" />
-	</MetricGroup>
+  <MetricGroup Name="CPU">
+    <Counter Category="Processor" Name="% Idle Time" Instance="_Total" MetricName="System Idle" Unit="% CPU" />
+    <Counter Category="Process" Name="% Processor Time" Instance="msmdsrv" MetricName="SSAS Process" Unit="% CPU" />
+    <Counter Category="Process" Name="IO Data Bytes/sec" Instance="msmdsrv" MetricName="IO Data Bytes/sec" Unit="Bytes" />
+    <Counter Category="Process" Name="IO Write Bytes/sec" Instance="msmdsrv" MetricName="IO Write Bytes/sec" Unit="Bytes" />
+    <Counter Category="Process" Name="IO Read Bytes/sec" Instance="msmdsrv" MetricName="IO Read Bytes/sec" Unit="Bytes" />
+  </MetricGroup>
+  <MetricGroup Name="OverallMemory">
+    <Counter Category="Memory" Name="Pages/sec" MetricName="System Idle" Unit="pages/s" />
+    <Counter Category="Memory" Name="Committed Bytes" MetricName="Committed VRAM" Unit="Gigabytes" ConversionRatio="3" />
+    <Counter Category="Memory" Name="% Committed Bytes in Use" MetricName="Committed VRAM usage" Unit="%" />
+  </MetricGroup>
+  <MetricGroup Name="SsasProcessMemory">
+    <Counter Category="Memory" Name="Page File Bytes" Instance="msmdsrv" MetricName="Page File" Unit="Gigabytes" ConversionRatio="3" />
+    <Counter Category="Memory" Name="Page File Bytes Peak" Instance="msmdsrv" MetricName="Page File Peak" Unit="Gigabytes" ConversionRatio="3" />
+  </MetricGroup>
+  <MetricGroup>
+    <Counter Category="LogicalDisk" Name="%Disk Time" MetricName="%Disk Time" Unit="%" />
+  </MetricGroup>
+  <MetricGroup Name="SsasMemoryLimitConfiguration">
+    <Counter Category="MSAS12:Memory" Name="Memory Limit Low KB" MetricName="Memory Limit Low" Unit="Gigabytes" ConversionRatio="2" />
+    <Counter Category="MSAS12:Memory" Name="Memory Limit High KB" MetricName="Memory Limit High" Unit="Gigabytes" ConversionRatio="2"/>
+  </MetricGroup>
+  <MetricGroup Name="SsasMemory">
+    <Counter Category="MSAS12:Memory" Name="Memory Usage KB" MetricName="Memory Usage" Unit="Gigabytes" ConversionRatio="2" />
+    <Counter Category="MSAS12:Memory" Name="Cleaner Memory shrinkable KB" MetricName="Cleaner Memory Shrinkable" Unit="Kilobytes" />
+    <Counter Category="MSAS12:Memory" Name="Cleaner Memory nonshrinkable KB" MetricName="Cleaner Memory Nonshrinkable" Unit="Kilobytes" />
+  </MetricGroup>
+  <MetricGroup Name="Processing">
+    <Counter Category="MSAS12:Processing" Name="Rows read/sec" MetricName="Rows read" Unit="Rows per sec" />
+    <Counter Category="MSAS12:Processing" Name="Rows written/sec" MetricName="Rows written" Unit="Rows per sec" />
+    <Counter Category="MSAS12:Proc Aggregations" Name="Rows created/sec" MetricName="Rows created" Unit="Rows per sec" />
+    <Counter Category="MSAS12:Proc Aggregations" Name="Rows merged/sec" MetricName="Rows merged" Unit="Rows per sec" />
+    <Counter Category="MSAS12:Proc Indexes" Name="Rows/sec" MetricName="Rows indexed" Unit="Rows per sec" />
+  </MetricGroup>
+  <MetricGroup Name="MDX">
+    <Counter Category="MSAS12:MDX" Name="Total cells calculated" MetricName="Total cells calculated" Unit="Cells" />
+    <Counter Category="MSAS12:MDX" Name="Number of calculation covers" MetricName="Number of calculation covers" Unit="Calculation covers" />
+    <Counter Category="MSAS12:MDX" Name="Total Sonar subcubes" MetricName="Total Sonar subcubes" Unit="Sonar subcubes" />
+    <Counter Category="MSAS12:MDX" Name="Total recomputes" MetricName="Total recomputes" Unit="Cells" />
+    <Counter Category="MSAS12:MDX" Name="Total NON EMPTY unoptimized" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
+    <Counter Category="MSAS12:MDX" Name="Total NON EMPTY for calculated members" MetricName="Total NON EMPTY unoptimized" Unit="Hits" />
+  </MetricGroup>
+  <MetricGroup Name="Activity">
+    <Counter Category="MSAS12:Storage Engine Query" Name="Total Queries Answered" MetricName="Total Queries Answered" Unit="Hits" />
+  </MetricGroup>
+  <MetricGroup Name="Cache Hit Ratios">
+    <Counter Category="MSAS12:Storage Engine Query" Name="Calculation cache lookups/sec" MetricName="Calculation cache lookups" Unit="hits per sec" />
+    <Counter Category="MSAS12:Storage Engine Query" Name="Flat cache lookups/sec" MetricName="" Unit="hits per sec" />
+    <Counter Category="MSAS12:Storage Engine Query" Name="Dimension cache lookups/sec" MetricName="Measure group cache lookups" Unit="hits per sec" />
+    <Counter Category="MSAS12:Storage Engine Query" Name="Measure group cache lookups/sec" MetricName="Measure group cache lookups" Unit="hits per sec" />
+  </MetricGroup>
+  <MetricGroup Name="Cache Activity">
+    <Counter Category="MSAS12:Cache" Name="Inserts/sec" MetricName="Insertions" Unit="Items per sec" />
+    <Counter Category="MSAS12:Cache" Name="Evictions/sec" MetricName="Evictions" Unit="Items per rate" />
+    <Counter Category="MSAS12:Cache" Name="KB added/sec" MetricName="Kilobytes added" Unit="KiloBytes per sec" />
+  </MetricGroup>
+  <MetricGroup Name="Cache Status">
+    <Counter Category="MSAS12:Cache" Name="Current Entries" MetricName="Current Entries" Unit="Entries" />
+    <Counter Category="MSAS12:Cache" Name="Total Direct Hits" MetricName="Direct Hits" Unit="Hits" />
+    <Counter Category="MSAS12:Cache" Name="Total Misses" MetricName="Misses" Unit="Hits" />
+  </MetricGroup>
 </Counters>
