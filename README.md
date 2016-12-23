@@ -8,9 +8,9 @@ This project was born from the need to monitor an SSAS instance in the marvelous
 + A windows service wrapper like [NSSM] (https://nssm.cc/)
 
 ## Customize performance counters collected
-Out-of-the-box, this plugin collects various performance counters if you do want to monitor a SSAS instance. Two configuration files are available in config folder:
-+ `Counters.2012.xml`: SQL Server Analysis Services 2012 Performance Counters 
-+ `Counters.2014.xml`: SQL Server Analysis Services 2014 Performance Counters  
+Out-of-the-box, this plugin collects various performance counters if you do want to monitor an SSAS instance. Two configuration files are available in config folder:
++ `Counters.SSAS.2012.xml`: SQL Server Analysis Services 2012 Performance Counters 
++ `Counters.SSAS.2014.xml`: SQL Server Analysis Services 2014 Performance Counters  
 
 The agent loads `config/counters.xml` file so you have to copy/rename the file matching your edition.
 
