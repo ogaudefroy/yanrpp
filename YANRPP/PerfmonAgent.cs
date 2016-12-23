@@ -62,7 +62,7 @@
         /// <summary>
         /// Gets the agent unique identifier.
         /// </summary>
-        public override string Guid => "com.ogaudefroy.yanrpp";
+        public override string Guid => "com.github.ogaudefroy.yanrpp-ssas";
 
         /// <summary>
         /// Gets the client version.
