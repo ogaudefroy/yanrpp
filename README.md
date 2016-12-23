@@ -8,13 +8,7 @@ This project was born from the need to monitor an SSAS instance in the wonderful
 + A windows service wrapper like [NSSM] (https://nssm.cc/)
 
 ## Customize performance counters collected
-Out-of-the-box, this plugin collects various performance counters if you do want to monitor an SSAS instance. Two configuration files are available in config folder:
-+ `Counters.SSAS.2012.xml`: SQL Server Analysis Services 2012 Performance Counters 
-+ `Counters.SSAS.2014.xml`: SQL Server Analysis Services 2014 Performance Counters  
-
-The agent loads `config/counters.xml` file so you have to copy/rename the file matching your edition.
-
-**Performance counters are unfortunately culture sensitive, the provided configuration files are for en-US version only.**
+The agent loads `config/counters.xml` file so you have to copy/rename/create your own counter file matching your needs.
 
 As mentioned previously, it's a quick and dirty version and counters.xml is not currently validated with a XSD here is the way we parse it:
 + **Counters**: root node containing all metric groups
@@ -38,6 +32,14 @@ Here is a very simple counters.xml definition
   </MetricGroup>
 </Counters>
 ```
+Out-of-the-box, this plugin collects various performance counters if you do want to monitor an SSAS instance. Two configuration files are available in config folder:
++ `Counters.SSAS.2012.xml`: SQL Server Analysis Services 2012 Performance Counters 
++ `Counters.SSAS.2014.xml`: SQL Server Analysis Services 2014 Performance Counters  
+
+
+## Retrieve performance counter names and categories
+A very simple way to retrieve them is to use typeperf command line: `typeperf -q`  
+**Performance counters are unfortunately culture sensitive, the provided configuration files are for en-US version only.**
 
 ## New Relic dashboard configuration
 Once the perfmon plugin up and running you need to create a custom dashboard in New Relic. Follow the official documentation available here:
