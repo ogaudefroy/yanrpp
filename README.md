@@ -1,5 +1,4 @@
-# yanrpp-ssas
-Yet Another New Relic Perfmon Plugin - SQL Server Analysis Edition  
+# Yet Another New Relic Perfmon Plugin
 
 This project was born from the need to monitor an SSAS instance in the marvelous New Relic APM. [Nick Floyd's perfmon plugin] (https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
 
