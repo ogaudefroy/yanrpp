@@ -3,7 +3,7 @@
 This project was born from the need to monitor an SSAS instance in the wonderful New Relic APM. [Nick Floyd's perfmon plugin] (https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
 
 ## Prerequisites
-+ Windows Server to locally or remotely collect Perfmon counters
++ Windows Server to locally collect Perfmon counters
 + .Net 3.5 Client Profile
 + A windows service wrapper like [NSSM] (https://nssm.cc/)
 
