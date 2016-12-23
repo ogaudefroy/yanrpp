@@ -16,6 +16,29 @@ The agent loads `config/counters.xml` file so you have to copy/rename the file m
 
 **Performance counters are unfortunately culture sensitive, the provided configuration files are for en-US version only.**
 
+As mentioned previously, it's a quick and dirty version and counters.xml is not currently validated with a XSD here is the way we parse it:
++ **Counters**: root node containing all metric groups
++ **MetricGroup**: a group of metrics, requires a Name attribute `<MetricGroup Name="OverallMemory"></MetricGroup>`
++ **Counter**: a performance counter with the following attributes
+    + **Category**: the category of the performance counter (required)
+    + **Name**: the performance counter name (required)
+    + **Instance**: the instance of the performance counter (optional)
+    + **MetricName**: the name of the metric reported in New Relic (required)
+    + **Unit**: the unit in which the metric reported in New Relic (required)
+    + **ConversionRatio**: an optional ratio to declare a 1024^ConversionRatio of the collected metric value
+
+Here is a very simple counters.xml definition  
+```xml
+<?xml version="1.0"?>
+<Counters>
+    <MetricGroup Name="OverallMemory">
+    <Counter Category="Memory" Name="Pages/sec" MetricName="System Idle" Unit="pages/s" />
+    <Counter Category="Memory" Name="Committed Bytes" MetricName="Committed VRAM" Unit="Gigabytes" ConversionRatio="3" />
+    <Counter Category="Memory" Name="% Committed Bytes in Use" MetricName="Committed VRAM usage" Unit="%" />
+  </MetricGroup>
+</Counters>
+```
+
 ## New Relic dashboard configuration
 Once the perfmon plugin up and running you need to create a custom dashboard in New Relic. Follow the official documentation available here:
 + [New Relic - Working with plugin dashboard] (https://docs.newrelic.com/docs/plugins/developing-plugins/structuring-your-plugin/working-plugin-dashboards) 
