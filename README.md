@@ -12,7 +12,7 @@ The agent loads `config/counters.xml` file so you have to copy/rename/create you
 
 As mentioned previously, it's a quick and dirty version and counters.xml is not currently validated with a XSD here is the way we parse it:
 + **Counters**: root node containing all metric groups
-+ **MetricGroup**: a group of metrics, requires a Name attribute `<MetricGroup Name="OverallMemory"></MetricGroup>`
++ **MetricGroup**: a group of metrics, requires a Name attribute
 + **Counter**: a performance counter with the following attributes
     + **Category**: the category of the performance counter (required)
     + **Name**: the performance counter name (required)
