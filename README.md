@@ -1,6 +1,6 @@
 # Yet Another New Relic Perfmon Plugin
 
-This project was born from the need to monitor an SSAS instance in the wonderful New Relic APM. [Nick Floyd's perfmon plugin] (https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
+This project was born from the need to monitor SSAS instances in the wonderful New Relic APM. [Nick Floyd's perfmon plugin] (https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
 
 ## Prerequisites
 + Windows Server to locally collect Perfmon counters
@@ -17,8 +17,8 @@ As mentioned previously, it's a quick and dirty version and counters.xml is not 
     + **Category**: the category of the performance counter (required)
     + **Name**: the performance counter name (required)
     + **Instance**: the instance of the performance counter (optional)
-    + **MetricName**: the name of the metric reported in New Relic (required)
-    + **Unit**: the unit in which the metric reported in New Relic (required)
+    + **MetricName**: the metric's name reported in New Relic (required)
+    + **Unit**: the metric's unit reported in New Relic (required)
     + **ConversionRatio**: an optional ratio to declare a 1024^ConversionRatio of the collected metric value
 
 Here is a very simple counters.xml definition  
