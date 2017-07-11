@@ -1,11 +1,11 @@
 # Yet Another New Relic Perfmon Plugin
 
-This project was born from the need to monitor SSAS instances in the wonderful New Relic APM. [Nick Floyd's perfmon plugin] (https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
+This project was born from the need to monitor SSAS instances in the wonderful New Relic APM. [Nick Floyd's perfmon plugin](https://github.com/nickfloyd/newrelic-perfmon-plugin) wouldn't work as it does not collect 64 bit counters and thus we decided to build a quick and dirty one.
 
 ## Prerequisites
 + Windows Server to locally collect Perfmon counters
 + .Net 3.5 Client Profile
-+ A windows service wrapper like [NSSM] (https://nssm.cc/)
++ A windows service wrapper like [NSSM](https://nssm.cc/)
 
 ## Customize performance counters collected
 The agent loads `config/counters.xml` file so you have to copy/rename/create your own counter file matching your needs.
@@ -43,8 +43,8 @@ A very simple way to retrieve them is to use typeperf command line: `typeperf -q
 
 ## New Relic dashboard configuration
 Once the perfmon plugin up and running you need to create a custom dashboard in New Relic. Follow the official documentation available here:
-+ [New Relic - Working with plugin dashboard] (https://docs.newrelic.com/docs/plugins/developing-plugins/structuring-your-plugin/working-plugin-dashboards) 
-+ [New Relic - Summary metrics] (https://docs.newrelic.com/docs/plugins/developing-plugins/structuring-your-plugin/creating-summary-metrics-plugins)
++ [New Relic - Working with plugin dashboard](https://docs.newrelic.com/docs/plugins/developing-plugins/structuring-your-plugin/working-plugin-dashboards) 
++ [New Relic - Summary metrics](https://docs.newrelic.com/docs/plugins/developing-plugins/structuring-your-plugin/creating-summary-metrics-plugins)
 
 ## Troubleshooting
 + To output collected metrics set `log_level:debug` in `config\newrelic.json`
